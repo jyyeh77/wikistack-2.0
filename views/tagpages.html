@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h3>Pages Containing Searched Tags</h3>
+  <hr>
+  <h4>{{ tags }} </h4>
+  <ul class="list-unstyled">
+    {% for page in pages %}
+    <li><a href="/wiki/{{page.urlTitle}}">{{page.title}} </a></li>
+    {% endfor %}
+  </ul>
+  </hr>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h3>{{ pageTitle }} <small> (<a href="{{ urlTitle }}/similar">Similar</a>)</small></h3>
+  <h4>by <a href="{{ authorUrl }}">{{ authorName }}</a></h4>
+  <div>{% for tag in tags %}
+        <a href="/wiki/tagpage/{{tag}}">{{tag}}</a>
+        {% endfor %}
+  </div>
+  <hr/>
+  <div>{{ authorName }}</div>
+  <div class="page-body">{{ pageContent }}</div>
+  <hr/>
+  <a href="{{ urlTitle }}/edit" class="btn btn-primary">edit this page</a>
+  <a href="{{ urlTitle }}/delete" class="btn btn-danger">delete this page</a>
+{% endblock %}
